@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+
+<head>
+
+<link rel="stylesheet" type="text/css" href="styles\generalstyles.css">
+
+<title>What's new</title>
+
+<script language="JavaScript">
+
+function popup(FILE, FEATURES) { 
+    CONTENT = "<HTML><HEAD><TITLE>Enlarged image</TITLE></HEAD>" +
+              "<BODY><CENTER><FORM><INPUT TYPE='BUTTON' VALUE='Close'" +
+               "onClick='window.close()'></FORM><P><IMG SRC='" + FILE + 
+               "' BORDER=0>" + "</CENTER>"+ "</BODY></HTML>";
+              pop = window.open("","",FEATURES);
+              pop.document.open();
+              pop.focus();
+              pop.document.write(CONTENT);
+              pop.document.close();
+
+} 
+
+
+function view (imagefile) { 
+   var winShell
+   var atext, btext, ctext;
+   var fso;
+   var quoteS = String.fromCharCode(34);
+
+   atext=self.location.href; // the current page path
+   fso  = new ActiveXObject("Scripting.FileSystemObject"); 
+   btext = fso.GetParentFolderName(atext); // path without the page name
+   delete(fso);
+
+   atext = quoteS + "\\" + btext + exefile  + quoteS; // add the image relative path and put in quotes
+   atext = atext.replace( /\//g, '\\' ); // make sure the slashes are the right way round
+   ctext = "btext = " + btext + " atext = " + atext;
+   // alert(ctext);
+
+   atext = "rundll32.exe %SystemRoot%\system32\shimgvw.dll,ImageView_Fullscreen";
+   // add the image path
+   atext = atext + "\\" + imagefile;
+   alert(text);
+
+   // Run the given executable
+   winShell = new ActiveXObject("WScript.Shell");
+   // winShell.Run(atext);
+   delete(winShell);
+}
+
+</script>
+
+</head>
+
+<title>What's new</title>
+
+<body>
+
+<br>
+
+<H3>What's new</H3>
+<br>
+
+<p style="background: palegoldenrod; border: 1px solid #0066FF; padding:8px">
+<br>
+<b>1st January 2022</b>
+<br><br>
+1) <a href="https://jarvis-genealogy.github.io/Scott-Family/"><b>Scott Family</b></a> repository created.
+<br>
+2) Photo albums for the Desmond family
+<br>
+3) Photos of the <a href="https://jarvis-genealogy.github.io/Jarvis-Family/content/jarvis-tree/images/Back-Valley/Back-Valley-Album.html"><b>home of John Barrett</b></a> at Back Valley near Victor Harbor.
+<br>
+4) <a href="https://jarvis-genealogy.github.io/Sanderson-Family/content/records/Yvonne/Yvonne-Records.html"><b>Scanned records</b></a> from Yvonne Nicholson of Port Augusta.
+<br>
+5) Scans of <a href="https://jarvis-genealogy.github.io/Sanderson-Family/content/records/Aunty-Ella.pdf"><b>Aunty Ella's writings</b></a>.
+<br>
+6) Main index page updated.
+<br>
+7) Photo album web page generator script.
+<br><br>
+</p>
+
+<br>
+
+<br><br><br><br>
+
+</body>
+
+</html>
+
